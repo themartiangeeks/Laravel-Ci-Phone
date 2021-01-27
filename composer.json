@@ -1,0 +1,50 @@
+{
+    "name": "martiangeeks/laravel-ci-phone",
+    "description": "",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "The Martian Geeks",
+            "email": "contact@martiangeeks.com",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.1|^8.0",
+        "illuminate/support": "^6.0|^7.0|^8.0",
+        "illuminate/validation": "^6.0|^7.0|^8.0",
+        "giggsey/libphonenumber-for-php": "^7.0|^8.0",
+        "league/iso3166": "^2.0|^3.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "*",
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Martiangeeks\\LaravelCiPhone\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Martiangeeks\\LaravelCiPhone\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Martiangeeks\\LaravelCiPhone\\OperatorServiceProvider"
+            ],
+            "aliases": {
+                "OperatorRules": "Martiangeeks\\ValidationRules\\Facade"
+            },
+            "dont-discover": [
+                "*"
+            ]
+        }
+    }
+}
